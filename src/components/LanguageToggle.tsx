@@ -9,7 +9,7 @@ export default function LanguageToggle() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={toggleLanguage}
-      className="px-3 py-1 rounded-full bg-[#040457] dark:bg-[#04040c] text-[#0424f6] dark:text-[#0424f6] font-medium"
+      className="px-3 py-1 rounded-full bg-[#0424f6] dark:bg-[#a5a5ff] text-white dark:text-[#040457] font-medium border border-[#0424f6] dark:border-[#a5a5ff] hover:bg-[#041c94] dark:hover:bg-white transition-colors"
     >
       {language.toUpperCase()}
     </motion.button>

@@ -47,10 +47,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.violet.400');
+  background: theme('colors.blue.600');
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.violet.500');
+  background: theme('colors.blue.700');
 }

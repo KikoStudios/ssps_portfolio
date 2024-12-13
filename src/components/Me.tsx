@@ -34,7 +34,7 @@ export default function Me() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-16 text-[#0424f6]"
+          className="text-4xl font-bold text-center mb-16 text-[#a5a5ff]"
         >
           {t('me.title')}
         </motion.h2>
@@ -54,16 +54,16 @@ export default function Me() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-2 p-4 bg-[#040dc4]/20 rounded-lg border border-[#0424f6]/20"
+                  className="flex items-center gap-2 p-4 bg-[#040dc4]/30 rounded-lg border border-[#a5a5ff]/30"
                 >
-                  <span className="text-[#0424f6]">{item.icon}</span>
+                  <span className="text-[#a5a5ff]">{item.icon}</span>
                   <span className="text-sm font-medium text-white">{item.label}</span>
                 </motion.div>
               ))}
             </div>
 
             <div className="space-y-4">
-              <p className="text-xl font-semibold text-[#0424f6]">
+              <p className="text-xl font-semibold text-[#a5a5ff]">
                 {t('me.subtitle')}
               </p>
               <p className="text-gray-300">
@@ -78,7 +78,7 @@ export default function Me() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-xl font-semibold text-[#0424f6]">
+            <h3 className="text-xl font-semibold text-[#a5a5ff]">
               {t('me.experience')}
             </h3>
             
@@ -90,11 +90,11 @@ export default function Me() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative pl-6 border-l-2 border-[#0424f6]"
+                  className="relative pl-6 border-l-2 border-[#a5a5ff]"
                 >
-                  <span className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#0424f6]" />
+                  <span className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#a5a5ff]" />
                   <div className="space-y-2">
-                    <span className="text-sm text-[#0424f6]">{exp.year}</span>
+                    <span className="text-sm text-[#a5a5ff]">{exp.year}</span>
                     <h4 className="text-lg font-semibold">{exp.title}</h4>
                     <p className="text-gray-300">{exp.company}</p>
                     <p className="text-gray-400">{exp.description}</p>

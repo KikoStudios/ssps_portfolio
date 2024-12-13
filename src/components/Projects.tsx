@@ -19,13 +19,13 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 px-4 bg-white dark:bg-[#040457]">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#0424f6] to-[#040dc4]"
+          className="text-4xl font-bold text-center mb-16 text-[#0424f6] dark:text-white"
         >
           {t('projects.title')}
         </motion.h2>
@@ -36,7 +36,7 @@ export default function Projects() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            className="bg-[#040457] dark:bg-[#04040c] rounded-xl shadow-lg overflow-hidden group"
+            className="bg-white dark:bg-[#1a1a4f] rounded-xl shadow-lg overflow-hidden group border border-[#0424f6]/20 dark:border-[#8e8ef9]/20"
           >
             <div className="aspect-video overflow-hidden relative">
               <img
@@ -58,10 +58,10 @@ export default function Projects() {
             </div>
             
             <div className="p-6">
-              <h3 className="text-2xl font-semibold mb-2 dark:text-white">
+              <h3 className="text-2xl font-semibold mb-2 text-[#0424f6] dark:text-white">
                 {t(projects[currentIndex].title)}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-800 dark:text-gray-200 mb-4">
                 {t(projects[currentIndex].description)}
               </p>
               
@@ -69,7 +69,7 @@ export default function Projects() {
                 {projects[currentIndex].tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-[#0424f6]/20 text-[#0424f6] rounded-full text-sm font-medium"
+                    className="px-3 py-1 bg-[#0424f6] dark:bg-[#8e8ef9] text-white dark:text-[#040457] rounded-full text-sm font-medium"
                   >
                     {tag}
                   </span>
@@ -79,18 +79,18 @@ export default function Projects() {
               <div className="flex gap-4">
                 <a
                   href={projects[currentIndex].github}
-                  className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                  className="flex items-center gap-2 text-[#0424f6] dark:text-white hover:text-[#041c94] dark:hover:text-[#8e8ef9] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github size={18} />
+                  <Github size={20} className="stroke-2" />
                   <span>{t('projects.viewCode')}</span>
                 </a>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                  className="flex items-center gap-2 text-[#0424f6] dark:text-white hover:text-[#041c94] dark:hover:text-[#8e8ef9] transition-colors"
                 >
-                  <Plus size={18} />
+                  <Plus size={20} className="stroke-2" />
                   <span>{t('projects.learnMore')}</span>
                 </button>
               </div>
@@ -99,15 +99,15 @@ export default function Projects() {
 
           <button
             onClick={prevProject}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-3 bg-[#0424f6] dark:bg-[#8e8ef9] rounded-full shadow-lg text-white dark:text-[#040457] hover:bg-[#041c94] dark:hover:bg-white transition-colors"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} className="stroke-2" />
           </button>
           <button
             onClick={nextProject}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-3 bg-[#0424f6] dark:bg-[#8e8ef9] rounded-full shadow-lg text-white dark:text-[#040457] hover:bg-[#041c94] dark:hover:bg-white transition-colors"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={24} className="stroke-2" />
           </button>
         </div>
 

@@ -32,7 +32,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
+          className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#0424f6] to-[#040dc4]"
         >
           Skills & Expertise
         </motion.h2>
@@ -54,24 +54,24 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+      className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-[#040457]/50"
     >
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-purple-600">{skill.icon}</span>
-        <h3 className="text-xl font-semibold">{skill.category}</h3>
+        <span className="text-[#0424f6] dark:text-[#a5a5ff]">{skill.icon}</span>
+        <h3 className="text-xl font-semibold text-[#0424f6] dark:text-white">{skill.category}</h3>
       </div>
 
       <ul className="space-y-2">
         {skill.items.map((item: string) => (
           <motion.li
             key={item}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
           >
-            <span className="w-1.5 h-1.5 bg-purple-600 rounded-full" />
+            <span className="w-1.5 h-1.5 bg-[#0424f6] dark:bg-[#a5a5ff] rounded-full" />
             {item}
           </motion.li>
         ))}

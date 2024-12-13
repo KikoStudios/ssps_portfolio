@@ -36,39 +36,39 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-[90vw] max-w-4xl h-[80vh] bg-[#040457] dark:bg-[#04040c] rounded-xl shadow-2xl z-50 overflow-hidden m-4 text-white"
+              className="relative w-[90vw] max-w-4xl h-[80vh] bg-white dark:bg-[#1a1a4f] rounded-xl shadow-2xl z-50 overflow-hidden m-4 text-gray-900 dark:text-white"
             >
               <div className="h-full flex flex-col">
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-[#0424f6]/20">
-                  <h3 className="text-3xl font-bold text-white">
+                <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-[#8e8ef9]/20">
+                  <h3 className="text-3xl font-bold text-[#0424f6] dark:text-white">
                     {t(project.title)}
                   </h3>
                   <button
                     onClick={onClose}
-                    className="p-2 hover:bg-[#0424f6]/20 rounded-full transition-colors"
+                    className="p-2 hover:bg-gray-100 dark:hover:bg-[#8e8ef9]/20 rounded-full transition-colors text-gray-700 dark:text-white"
                   >
-                    <X className="w-6 h-6" />
+                    <X size={24} className="stroke-2" />
                   </button>
                 </div>
 
                 {/* Tabs */}
-                <div className="flex gap-4 p-6 border-b border-[#0424f6]/20">
+                <div className="flex gap-4 p-6 border-b border-gray-200 dark:border-[#8e8ef9]/20">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id as 'details' | 'preview')}
                       className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                         activeTab === tab.id
-                          ? 'text-[#0424f6]'
-                          : 'text-gray-400'
+                          ? 'text-[#0424f6] dark:text-[#8e8ef9]'
+                          : 'text-gray-500 dark:text-gray-300'
                       }`}
                     >
                       {tab.label}
                       {activeTab === tab.id && (
                         <motion.div
                           layoutId="activeTab"
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0424f6]"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0424f6] dark:bg-[#8e8ef9]"
                         />
                       )}
                     </button>
@@ -87,30 +87,36 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         className="space-y-6"
                       >
                         <div>
-                          <h4 className="text-lg font-semibold mb-2 dark:text-white">
+                          <h4 className="text-lg font-semibold mb-2 text-[#0424f6] dark:text-[#8e8ef9]">
                             {t('projects.modal.overview')}
                           </h4>
-                          <p className="text-gray-600 dark:text-gray-300">
+                          <p className="text-gray-700 dark:text-gray-200">
                             {t(project.details.overview)}
                           </p>
                         </div>
 
                         <div>
-                          <h4 className="text-lg font-semibold mb-2 dark:text-white">{t('projects.modal.features')}</h4>
+                          <h4 className="text-lg font-semibold mb-2 text-[#0424f6] dark:text-[#8e8ef9]">
+                            {t('projects.modal.features')}
+                          </h4>
                           <ul className="list-disc list-inside space-y-1">
                             {project.details.features.map((feature, index) => (
-                              <li key={index} className="text-gray-600 dark:text-gray-300">{feature}</li>
+                              <li key={index} className="text-gray-700 dark:text-gray-200">
+                                {feature}
+                              </li>
                             ))}
                           </ul>
                         </div>
 
                         <div>
-                          <h4 className="text-lg font-semibold mb-2 dark:text-white">{t('projects.modal.technologies')}</h4>
+                          <h4 className="text-lg font-semibold mb-2 text-[#0424f6] dark:text-[#8e8ef9]">
+                            {t('projects.modal.technologies')}
+                          </h4>
                           <div className="flex flex-wrap gap-2">
                             {project.details.technologies.map((tech, index) => (
                               <span
                                 key={index}
-                                className="px-3 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-full text-sm"
+                                className="px-3 py-1 bg-[#0424f6]/10 dark:bg-[#8e8ef9]/20 text-[#0424f6] dark:text-[#8e8ef9] rounded-full text-sm"
                               >
                                 {tech}
                               </span>
@@ -118,22 +124,25 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                           </div>
                         </div>
 
-                        <div>
-                          <h4 className="text-lg font-semibold mb-2 dark:text-white">
-                            {t('projects.modal.challenges')}
-                          </h4>
-                          <p className="text-gray-600 dark:text-gray-300">
-                            {t(project.details.challenges)}
-                          </p>
-                        </div>
-
-                        <div>
-                          <h4 className="text-lg font-semibold mb-2 dark:text-white">
-                            {t('projects.modal.outcome')}
-                          </h4>
-                          <p className="text-gray-600 dark:text-gray-300">
-                            {t(project.details.outcome)}
-                          </p>
+                        <div className="flex justify-end gap-4 p-6 border-t border-gray-200 dark:border-[#8e8ef9]/20">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 text-[#0424f6] dark:text-white hover:text-[#041c94] dark:hover:text-[#8e8ef9] transition-colors"
+                          >
+                            <Github size={20} className="stroke-2" />
+                            <span>{t('projects.viewCode')}</span>
+                          </a>
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 bg-[#0424f6] dark:bg-[#8e8ef9] text-white dark:text-[#040457] rounded-lg hover:bg-[#041c94] dark:hover:bg-white transition-colors"
+                          >
+                            <ExternalLink size={20} className="stroke-2" />
+                            <span>{t('projects.liveSite')}</span>
+                          </a>
                         </div>
                       </motion.div>
                     ) : (
@@ -163,28 +172,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
-
-                {/* Footer */}
-                <div className="flex justify-end gap-4 p-6 border-t border-[#0424f6]/20">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-white hover:text-[#0424f6] transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                    <span>{t('projects.viewCode')}</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-[#0424f6] text-white rounded-lg hover:bg-[#040dc4] transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    <span>{t('projects.liveSite')}</span>
-                  </a>
                 </div>
               </div>
             </motion.div>

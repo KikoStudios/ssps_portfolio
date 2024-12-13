@@ -51,7 +51,7 @@ export default function Competitions() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-16 text-[#0424f6] dark:text-[#8e8ef9]"
+          className="text-4xl font-bold text-center mb-16 text-[#0424f6] dark:text-[#a5a5ff]"
         >
           {t('competitions.title')}
         </motion.h2>
@@ -64,7 +64,7 @@ export default function Competitions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-gradient-to-r ${competition.color} p-8 rounded-[2rem] border border-[#e6e6ff] dark:border-[#8e8ef9]/20 
+              className={`bg-gradient-to-r ${competition.color} p-8 rounded-[2rem] border border-[#e6e6ff] dark:border-[#a5a5ff]/20 
                 hover:shadow-lg transition-all duration-300 group relative overflow-hidden
                 bg-white/80 dark:bg-[#040457]/50 backdrop-blur-sm`}
             >
@@ -72,7 +72,7 @@ export default function Competitions() {
                 dark:from-[#8e8ef9]/5 dark:to-[#0424f6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="flex items-start gap-8 relative z-10">
-                <div className="p-4 bg-[#f0f0ff] dark:bg-[#8e8ef9]/20 rounded-2xl text-[#0424f6]">
+                <div className="p-4 bg-[#f0f0ff] dark:bg-[#040dc4] rounded-2xl text-[#0424f6] dark:text-white">
                   {competition.icon}
                 </div>
                 
@@ -81,8 +81,8 @@ export default function Competitions() {
                     <h3 className="text-xl font-semibold text-[#0424f6] dark:text-white">
                       {competition.title}
                     </h3>
-                    <span className="px-4 py-1.5 bg-[#f0f0ff] dark:bg-[#8e8ef9]/20 rounded-full 
-                      text-sm font-medium text-[#0424f6] dark:text-[#8e8ef9]">
+                    <span className="px-4 py-1.5 bg-[#f0f0ff] dark:bg-[#040dc4] rounded-full 
+                      text-sm font-medium text-[#0424f6] dark:text-white">
                       {competition.medal}
                     </span>
                   </div>

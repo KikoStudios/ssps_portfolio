@@ -85,4 +85,5 @@ export const translations = {
     'projects.quantum.challenges': 'Vytvoření intuitivního rozhraní pro komplexní kvantové koncepty při zachování přesnosti simulace.',
     'projects.quantum.outcome': 'Využíváno více než 50 univerzitami po celém světě, pomáhá více než 10 000 studentům učit se základy kvantových výpočtů.',
   }
+
 };
